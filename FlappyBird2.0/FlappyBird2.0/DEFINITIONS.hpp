@@ -3,14 +3,15 @@
 #define SCREEN_WIDTH 768
 #define SCREEN_HEIGHT 1024
 
-#define SPLASH_STATE_SHOW_TIME 3.0
+#define PI 3.14159265359f
+
+#define SPLASH_STATE_SHOW_TIME 1.0
 
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/res/Splash Background.png"
 
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/res/background.png"
 #define GAME_BACKGROUND_FILEPATH "Resources/res/background.png"
 #define GAME_OVER_BACKGROUND_FILEPATH "Resources/res/background.png"
-
 
 #define GAME_TITLE_FILEPATH "Resources/res/title.png"
 
@@ -29,5 +30,18 @@
 #define PIPE_MOVEMENT_SPEED 200.0f
 #define PIPE_SPAWN_FREQUENCY 1.5f
 
+#define BIRD_ANIMATION_DURATION 0.4f
 
+#define GRAVITY 900.0f
+#define FLYING_SPEED 350.0f
 
+#define FLYING_DURATION 0.25f
+
+enum GameStates
+{
+    eReady,
+    ePlaying,
+    eGameOver
+};
+
+#define FLASH_SPEED 1500.0f

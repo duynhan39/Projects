@@ -15,6 +15,8 @@ namespace DN
         void MoveLand(float dt);
         void DrawLand();
         
+        const std::vector<sf::Sprite> &GetSprites() const;
+        
     private:
         GameDataRef _data;
         std::vector<sf::Sprite> _landSprites;

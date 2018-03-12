@@ -14,7 +14,7 @@ namespace DN
         
         sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
         
-        pipeSprites.push_back(sprite);
+        _pipeSprites.push_back(sprite);
     }
     void Pipe::SpawnTopPipe()
     {
@@ -22,7 +22,7 @@ namespace DN
         
         sprite.setPosition(_data->window.getSize().x, -_pipeSpawnYOffset);
         
-        pipeSprites.push_back(sprite);
+        _pipeSprites.push_back(sprite);
     }
     
     void Pipe::SpawnInvisiblPipe()
@@ -33,36 +33,41 @@ namespace DN
         
         sprite.setColor(sf::Color( 0, 0, 0, 0 ));
         
-        pipeSprites.push_back(sprite);
+        _pipeSprites.push_back(sprite);
         
     }
     void Pipe::MovePipes(float dt)
     {
-        for(unsigned short int i=0; i < pipeSprites.size(); i++)
+        for(unsigned short int i=0; i < _pipeSprites.size(); i++)
         {
-            if(pipeSprites.at(i).getPosition().x < 0 -pipeSprites.at(i).getGlobalBounds().width)
+            if(_pipeSprites.at(i).getPosition().x < 0 -_pipeSprites.at(i).getGlobalBounds().width)
             {
-                pipeSprites.erase(pipeSprites.begin()+i);
+                _pipeSprites.erase(_pipeSprites.begin()+i);
             } else
             {
                 float movement = PIPE_MOVEMENT_SPEED * dt;
                 
-                pipeSprites.at(i).move(-movement, 0);
+                _pipeSprites.at(i).move(-movement, 0);
             }
         }
     }
     
     void Pipe::DrawPipes()
     {
-        for(unsigned short int i=0; i < pipeSprites.size(); i++)
+        for(unsigned short int i=0; i < _pipeSprites.size(); i++)
         {
-            _data->window.draw(pipeSprites.at(i));
+            _data->window.draw(_pipeSprites.at(i));
         }
     }
     
     void Pipe::RandomisePipeOffset()
     {
         _pipeSpawnYOffset = rand() % (_landHeight + 1);
+    }
+    
+    const std::vector<sf::Sprite> &Pipe::GetSprites() const
+    {
+        return _pipeSprites;
     }
 }
 
