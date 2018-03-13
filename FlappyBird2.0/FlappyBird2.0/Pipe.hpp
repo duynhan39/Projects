@@ -14,16 +14,19 @@ namespace DN
         
         void SpawnBottomPipe();
         void SpawnTopPipe();
-        void SpawnInvisiblPipe();
+        void SpawnInvisiblePipe();
+        void SpawnScoringPipe();
         void MovePipes(float dt);
         void DrawPipes();
         void RandomisePipeOffset();
         
         const std::vector<sf::Sprite> &GetSprites() const;
+        std::vector<sf::Sprite> &GetScoringSprite();
         
     private:
         GameDataRef _data;
         std::vector<sf::Sprite> _pipeSprites;
+        std::vector<sf::Sprite> _scoringPipes;
         
         int _landHeight;
         int _pipeSpawnYOffset;

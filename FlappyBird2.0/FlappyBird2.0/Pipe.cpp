@@ -25,7 +25,7 @@ namespace DN
         _pipeSprites.push_back(sprite);
     }
     
-    void Pipe::SpawnInvisiblPipe()
+    void Pipe::SpawnInvisiblePipe()
     {
         sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
         
@@ -36,6 +36,17 @@ namespace DN
         _pipeSprites.push_back(sprite);
         
     }
+    
+    void Pipe::SpawnScoringPipe()
+    {
+        sf::Sprite sprite(_data->assets.GetTexture("Scoring Pipe"));
+        
+        sprite.setPosition( _data->window.getSize().x, 0);
+        
+        _scoringPipes.push_back(sprite);
+        
+    }
+    
     void Pipe::MovePipes(float dt)
     {
         for(unsigned short int i=0; i < _pipeSprites.size(); i++)
@@ -48,6 +59,19 @@ namespace DN
                 float movement = PIPE_MOVEMENT_SPEED * dt;
                 
                 _pipeSprites.at(i).move(-movement, 0);
+            }
+        }
+        
+        for(unsigned short int i=0; i < _scoringPipes.size(); i++)
+        {
+            if(_scoringPipes.at(i).getPosition().x < 0 -_scoringPipes.at(i).getGlobalBounds().width)
+            {
+                _scoringPipes.erase(_scoringPipes.begin()+i);
+            } else
+            {
+                float movement = PIPE_MOVEMENT_SPEED * dt;
+                
+                _scoringPipes.at(i).move(-movement, 0);
             }
         }
     }
@@ -68,6 +92,11 @@ namespace DN
     const std::vector<sf::Sprite> &Pipe::GetSprites() const
     {
         return _pipeSprites;
+    }
+    
+    std::vector<sf::Sprite> &Pipe::GetScoringSprite()
+    {
+        return _scoringPipes;
     }
 }
 

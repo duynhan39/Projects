@@ -7,6 +7,7 @@
 #include "Land.hpp"
 #include "Bird.hpp"
 #include "Collision.hpp"
+#include "Flash.hpp"
 
 namespace DN
 {
@@ -30,9 +31,13 @@ namespace DN
         Land *land;
         Bird *bird;
         Collision collision;
+        Flash *flash;
         
         sf::Clock clock;
         int _gameState;
+        
+        int _score;
+
     };
 }
 
