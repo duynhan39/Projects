@@ -24,6 +24,8 @@ namespace DN
         this->_title.setPosition((SCREEN_WIDTH)/2 - _title.getGlobalBounds().width/2, _title.getGlobalBounds().height);
         
         this->_playButton.setPosition((SCREEN_WIDTH)/2 - _playButton.getGlobalBounds().width/2, (SCREEN_HEIGHT)/2 - _playButton.getGlobalBounds().height/2);
+        
+        
     }
     
     

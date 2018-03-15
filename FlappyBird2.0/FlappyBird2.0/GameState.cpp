@@ -12,6 +12,23 @@ namespace DN
     
     void GameState::Init()
     {
+        if(!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH))
+        {
+            std::cout << "Error Loading Hit Sound Effect" << std::endl;
+        }
+        if(!_pointSoundBuffer.loadFromFile(POINT_SOUND_FILEPATH))
+        {
+            std::cout << "Error Loading Point Sound Effect" << std::endl;
+        }
+        if(!_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH))
+        {
+            std::cout << "Error Loading Wing Sound Effect" << std::endl;
+        }
+        
+        this->_hitSound.setBuffer(_hitSoundBuffer);
+        this->_pointSound.setBuffer(_pointSoundBuffer);
+        this->_wingSound.setBuffer(_wingSoundBuffer);
+        
         this->_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
         
         this->_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
@@ -56,7 +73,10 @@ namespace DN
                && _gameState != GameStates::eGameOver)
             {
                 _gameState = GameStates::ePlaying;
+                
                 bird->Tap();
+                
+                _wingSound.play();
             }
         }
     }
@@ -94,6 +114,8 @@ namespace DN
                     _gameState = GameStates::eGameOver;
                     
                     clock.restart();
+                    
+                    _hitSound.play();
                 }
             }
             
@@ -106,6 +128,8 @@ namespace DN
                     _gameState = GameStates::eGameOver;
                     
                     clock.restart();
+                    
+                    _hitSound.play();
                 }
             }
             
@@ -121,6 +145,8 @@ namespace DN
                         _score++;
                         
                         scoringSprites.erase(scoringSprites.begin() + i);
+                        
+                        _pointSound.play();
                     }
                 }
             }
@@ -131,7 +157,7 @@ namespace DN
             
             if(clock.getElapsedTime().asSeconds() > TIME_BEFORE_GAME_OVER_APPEARS)
             {
-                _data->machine.AddState(StateRef(new GameOverState(_data)), true);
+                _data->machine.AddState(StateRef(new GameOverState(_data, _score)), true);
             }
         }
         

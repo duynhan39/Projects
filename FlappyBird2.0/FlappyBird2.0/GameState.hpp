@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Game.hpp"
 #include "Pipe.hpp"
@@ -40,6 +41,14 @@ namespace DN
         int _gameState;
         
         int _score;
+        
+        sf::SoundBuffer _hitSoundBuffer;
+        sf::SoundBuffer _pointSoundBuffer;
+        sf::SoundBuffer _wingSoundBuffer;
+        
+        sf::Sound _hitSound;
+        sf::Sound _pointSound;
+        sf::Sound _wingSound;
 
     };
 }
