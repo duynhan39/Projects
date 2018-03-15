@@ -16,6 +16,7 @@ namespace DN
         
         _pipeSprites.push_back(sprite);
     }
+    
     void Pipe::SpawnTopPipe()
     {
         sf::Sprite sprite(_data->assets.GetTexture("Pipe Down"));
@@ -41,7 +42,7 @@ namespace DN
     {
         sf::Sprite sprite(_data->assets.GetTexture("Scoring Pipe"));
         
-        sprite.setPosition( _data->window.getSize().x, 0);
+        sprite.setPosition( _data->window.getSize().x + _data->assets.GetTexture("Pipe Up").getSize().x/2, 0);
         
         _scoringPipes.push_back(sprite);
         

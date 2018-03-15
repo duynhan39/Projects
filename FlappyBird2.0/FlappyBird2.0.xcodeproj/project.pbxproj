@@ -26,6 +26,7 @@
 		544FC7C22056375700837D31 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7C02056375700837D31 /* Bird.cpp */; };
 		544FC7C52056CF9800837D31 /* Collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7C32056CF9800837D31 /* Collision.cpp */; };
 		544FC7C82056F75B00837D31 /* Flash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7C62056F75B00837D31 /* Flash.cpp */; };
+		544FC7D7205A0A2A00837D31 /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7D5205A0A2A00837D31 /* HUD.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,13 +71,15 @@
 		544FC7BA2055BB9000837D31 /* Pipe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pipe.hpp; sourceTree = "<group>"; };
 		544FC7BC2055D70B00837D31 /* Land.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Land.cpp; sourceTree = "<group>"; };
 		544FC7BD2055D70B00837D31 /* Land.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Land.hpp; sourceTree = "<group>"; };
-		544FC7BF205634AA00837D31 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = "../../../../../../../Library/Developer/Xcode/DerivedData/FlappyBird2.0-ebwqmvyjrrpzcceznwoipertqjqv/Build/Products/Debug/Resources"; sourceTree = "<group>"; };
 		544FC7C02056375700837D31 /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
 		544FC7C12056375700837D31 /* Bird.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
 		544FC7C32056CF9800837D31 /* Collision.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collision.cpp; sourceTree = "<group>"; };
 		544FC7C42056CF9800837D31 /* Collision.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collision.hpp; sourceTree = "<group>"; };
 		544FC7C62056F75B00837D31 /* Flash.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Flash.cpp; sourceTree = "<group>"; };
 		544FC7C72056F75B00837D31 /* Flash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Flash.hpp; sourceTree = "<group>"; };
+		544FC7D4205A071700837D31 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		544FC7D5205A0A2A00837D31 /* HUD.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HUD.cpp; sourceTree = "<group>"; };
+		544FC7D6205A0A2A00837D31 /* HUD.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HUD.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +118,7 @@
 		544FC7722053D9DE00837D31 /* FlappyBird2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				544FC7BF205634AA00837D31 /* Resources */,
+				544FC7D4205A071700837D31 /* Resources */,
 				544FC7892053DAFF00837D31 /* DEFINITIONS.hpp */,
 				544FC7912053DB0000837D31 /* main.cpp */,
 				544FC78E2053DB0000837D31 /* Game.cpp */,
@@ -145,6 +148,8 @@
 				544FC7C42056CF9800837D31 /* Collision.hpp */,
 				544FC7C62056F75B00837D31 /* Flash.cpp */,
 				544FC7C72056F75B00837D31 /* Flash.hpp */,
+				544FC7D5205A0A2A00837D31 /* HUD.cpp */,
+				544FC7D6205A0A2A00837D31 /* HUD.hpp */,
 			);
 			path = FlappyBird2.0;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				544FC7962053DB0000837D31 /* StateMachine.cpp in Sources */,
 				544FC7A52053EFE600837D31 /* GameOverState.cpp in Sources */,
 				544FC7C22056375700837D31 /* Bird.cpp in Sources */,
+				544FC7D7205A0A2A00837D31 /* HUD.cpp in Sources */,
 				544FC7972053DB0000837D31 /* main.cpp in Sources */,
 				544FC7922053DB0000837D31 /* SplashState.cpp in Sources */,
 				544FC7942053DB0000837D31 /* InputManager.cpp in Sources */,

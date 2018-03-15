@@ -8,6 +8,8 @@
 #include "Bird.hpp"
 #include "Collision.hpp"
 #include "Flash.hpp"
+#include "HUD.hpp"
+#include "GameOverState.hpp"
 
 namespace DN
 {
@@ -32,6 +34,7 @@ namespace DN
         Bird *bird;
         Collision collision;
         Flash *flash;
+        HUD *hud;
         
         sf::Clock clock;
         int _gameState;
